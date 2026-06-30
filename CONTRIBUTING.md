@@ -10,7 +10,7 @@ This repository accepts small, focused documentation improvements that make soft
 - Include `When Not to Use` guidance where the template requires it.
 - Include trade-offs and simpler alternatives.
 - Do not add empty placeholder files or empty sections.
-- Do not introduce website tooling, generated tooling, or framework-heavy examples in the MVP unless explicitly requested.
+- Do not introduce website tooling, generated tooling, or framework-heavy examples unless explicitly requested.
 
 ## Content Types
 
@@ -19,6 +19,7 @@ The main contribution types are:
 - Pattern guides
 - Scenario guides
 - Anti-pattern guides
+- Runnable examples
 - Corrections to existing content
 
 ## Workflow
@@ -46,4 +47,34 @@ Every document should be useful to a developer building an actual project. That 
 
 ## Scope Discipline
 
-The MVP is intentionally narrow. If your proposed content expands the repository into a docs site, package, CLI, or generated system, treat that as post-MVP work unless maintainers approve it explicitly.
+Keep the repository lightweight. If your proposed content expands the repository into a docs site, package, CLI, or generated system, treat that as a separate direction unless maintainers approve it explicitly.
+
+## When To Add A New Example
+
+Add a new runnable example only when at least one of these is true:
+
+- the guide describes a boundary that is clearer in code than in prose
+- the pattern is commonly misunderstood without a concrete interaction flow
+- the example helps connect several existing docs such as a pattern guide plus a scenario
+- the example teaches a reusable shape such as translation, orchestration, lifecycle, or DTO mapping
+
+Do not add a new example when:
+
+- the guide is already clear through prose and a tiny code fragment
+- the code would only repeat an existing example with renamed nouns
+- the example would need framework setup or vendor SDK noise to make sense
+- the example would exist only to increase example count
+
+## Cross-Language Alignment
+
+Go and TypeScript examples do not need line-by-line parity, but they should preserve the same teaching intent when they cover the same topic.
+
+When maintaining both languages:
+
+- keep the same boundary and pattern intent
+- keep the same main scenario or problem framing
+- allow language-specific structure where it makes the example clearer
+- avoid drifting into different business behavior under the same example name
+- update coverage docs when parity changes
+
+Good parity means a reader can learn the same design idea from either language, not that both folders must be mechanically identical.

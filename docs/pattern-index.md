@@ -1,13 +1,13 @@
 # Pattern Index
 
-This index is a navigation layer for the current repository state. It focuses on the patterns and guides that already exist, plus a smaller set of topics that are intentionally deferred.
+This index is a navigation layer for the current repository state. It focuses on the patterns and guides that already exist today.
 
 ## How To Use This Index
 
 - Start with the decision guides if you know the problem but not the pattern name.
 - Use the core pattern list when you already have a candidate abstraction.
 - Use the scenario list when you want to see multiple patterns working together.
-- Treat items marked `Planned later` as roadmap entries, not available guidance.
+- Treat items without runnable coverage as documentation-first guidance, not as missing placeholders.
 
 ## Decision Guides
 
@@ -95,14 +95,6 @@ Guides not listed here are currently documentation-only by design.
 | [Order processing](./05-real-world-scenarios/order-processing.md) | Shows lifecycle coordination, downstream reactions, and order-state boundaries after checkout. |
 | [Admin panel / back-office actions](./05-real-world-scenarios/admin-panel.md) | Shows explicit admin commands, safe orchestration, and auditable operational workflows. |
 | [File upload system](./05-real-world-scenarios/file-upload-system.md) | Shows storage boundaries, upload metadata contracts, and optional processing wrappers. |
-
-## Planned Later
-
-These topics are in the roadmap but intentionally outside the current MVP slice:
-
-- `choose-by-domain.md`
-- Runnable framework examples
-- Generated catalog tooling
 
 ## Selection Rules
 

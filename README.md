@@ -49,11 +49,11 @@ If you are new to the repository, begin with:
 - `When Not to Use` is required.
 - Simpler alternatives must be acknowledged.
 - No empty placeholder documents.
-- Markdown-first MVP. No docs site or generated tooling in the initial version.
+- Keep the repository lightweight and readable.
 
-## Planned Repository Structure
+## Repository Structure
 
-The MVP grows into this structure over time. Files are created only when they have meaningful content.
+Files and directories exist only when they have meaningful content.
 
 ```txt
 docs/
@@ -70,43 +70,6 @@ diagrams/
 templates/
 .github/
 ```
-
-## MVP Scope
-
-The initial MVP focuses on:
-
-- Core decision guides
-- A focused set of pattern documents
-- Real-world scenario documents
-- Anti-pattern documents
-- Contribution templates and quality rules
-
-The MVP does not include:
-
-- A documentation website
-- A CLI
-- Generated indexes or metadata tooling
-- Full runnable framework applications
-
-## Current Status
-
-The repository started from a PRD and has been built through small, verified phases.
-
-Current coverage includes:
-
-1. Foundation contract
-2. Content governance
-3. Decision layer
-4. Core pattern library
-5. Scenario layer
-6. Anti-overengineering layer and MVP review
-
-Post-MVP concept expansion is now extending the repository with:
-
-- Additional structural and enterprise patterns
-- Architecture decision guides
-- Additional real-world scenarios
-- Small runnable Go examples for selected patterns and scenarios
 
 ## Runnable Coverage
 
@@ -152,6 +115,18 @@ The TypeScript track currently includes:
 | Introduction and checklists | No | No | docs only |
 
 Not every guide has a runnable counterpart yet. Architecture guides, anti-patterns, and some conceptual docs remain intentionally documentation-only.
+
+## Contribution Rules
+
+When adding new material:
+
+- prefer improving an existing guide before creating a parallel document
+- add a runnable example only when code clarifies a boundary better than prose alone
+- keep examples small, framework-free, and tied to named guides or scenarios
+- do not add a second-language example automatically; add it when parity improves learning value
+- when a concept exists in both Go and TypeScript, keep the behavioral intent aligned even if the implementation style differs by language
+
+Detailed contribution and example rules live in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Contributing
 
