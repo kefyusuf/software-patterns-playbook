@@ -35,6 +35,11 @@ The examples are intentionally minimal:
 
 The current Go set does not try to cover every document in the repository.
 
+Current language role:
+
+- best fit for explicit workflow, lifecycle, and small service-boundary examples
+- still the clearest reference track for explicit workflow and lifecycle examples
+
 Still documentation-first:
 
 - architecture guides such as layered, hexagonal, and modular monolith

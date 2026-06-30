@@ -110,11 +110,12 @@ Post-MVP concept expansion is now extending the repository with:
 
 ## Runnable Coverage
 
-The repository is still documentation-first, but a focused set of runnable Go examples now exists for the patterns where a small framework-free sample adds learning value.
+The repository is still documentation-first, but it now includes focused runnable example tracks where a small framework-free sample adds learning value.
 
 Current runnable examples:
 
 - [Go examples index](./examples/go/README.md)
+- [TypeScript examples index](./examples/typescript/README.md)
 - Strategy plus Factory: `payment-strategy`
 - Adapter plus Decorator: `notification-adapter`
 - Chain of Responsibility plus Command: `checkout-chain`
@@ -122,6 +123,33 @@ Current runnable examples:
 - Repository plus DTO: `order-repository-dto`
 - Domain Event: `order-domain-event`
 - Specification: `order-specification`
+
+The TypeScript track currently includes:
+
+- `payment-strategy`
+- `notification-adapter`
+- `checkout-chain`
+- `order-processing-state`
+- `order-repository-dto`
+- `order-specification`
+- `order-domain-event`
+
+## Language Coverage Matrix
+
+`Yes` means the repository currently includes a runnable example in that language. `Docs only` means guidance exists, but the concept intentionally remains documentation-first for now.
+
+| Topic | Go | TypeScript | Status |
+|---|---|---|---|
+| Payment system / Strategy / Factory | Yes | Yes | cross-language runnable |
+| Notification system / Adapter / Decorator | Yes | Yes | cross-language runnable |
+| E-commerce checkout / Chain of Responsibility / Command | Yes | Yes | cross-language runnable |
+| Order processing / State | Yes | Yes | cross-language runnable |
+| Order processing / Repository / DTO | Yes | Yes | cross-language runnable |
+| Order processing / Domain Event | Yes | Yes | cross-language runnable |
+| Order processing / Specification | Yes | Yes | cross-language runnable |
+| Architecture guides | No | No | docs only |
+| Anti-pattern guides | No | No | docs only |
+| Introduction and checklists | No | No | docs only |
 
 Not every guide has a runnable counterpart yet. Architecture guides, anti-patterns, and some conceptual docs remain intentionally documentation-only.
 

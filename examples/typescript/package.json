@@ -1,0 +1,15 @@
+{
+  "name": "software-patterns-playbook-typescript-examples",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "run:payment-strategy": "node dist/payment-strategy/main.js",
+    "run:order-domain-event": "node dist/order-domain-event/main.js",
+    "run:notification-adapter": "node dist/notification-adapter/main.js",
+    "run:order-repository-dto": "node dist/order-repository-dto/main.js",
+    "run:order-specification": "node dist/order-specification/main.js",
+    "run:checkout-chain": "node dist/checkout-chain/main.js",
+    "run:order-processing-state": "node dist/order-processing-state/main.js",
+    "test": "node dist/payment-strategy/payment.test.js && node dist/order-domain-event/order/service.test.js && node dist/notification-adapter/notification/notification.test.js && node dist/order-repository-dto/order/service.test.js && node dist/order-specification/order/specification.test.js && node dist/checkout-chain/checkout/pipeline.test.js && node dist/order-processing-state/order/order.test.js"
+  }
+}

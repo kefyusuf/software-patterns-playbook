@@ -44,7 +44,7 @@ This index is a navigation layer for the current repository state. It focuses on
 
 ## Runnable Example Coverage
 
-The repository is primarily documentation-first, but selected guides now have small runnable Go counterparts under [examples/go](../examples/go/README.md).
+The repository is primarily documentation-first, but selected guides now have small runnable counterparts under [examples/go](../examples/go/README.md) and [examples/typescript](../examples/typescript/README.md).
 
 | Guide or Scenario | Runnable Example |
 |---|---|
@@ -52,19 +52,27 @@ The repository is primarily documentation-first, but selected guides now have sm
 | [Strategy](./02-gof-patterns/behavioral/strategy.md) | [`payment-strategy`](../examples/go/payment-strategy/README.md) |
 | [Adapter](./02-gof-patterns/structural/adapter.md) | [`notification-adapter`](../examples/go/notification-adapter/README.md) |
 | [Decorator](./02-gof-patterns/structural/decorator.md) | [`notification-adapter`](../examples/go/notification-adapter/README.md) |
-| [Command](./02-gof-patterns/behavioral/command.md) | [`checkout-chain`](../examples/go/checkout-chain/README.md), [`order-domain-event`](../examples/go/order-domain-event/README.md) |
-| [Chain of Responsibility](./02-gof-patterns/behavioral/chain-of-responsibility.md) | [`checkout-chain`](../examples/go/checkout-chain/README.md) |
-| [State](./02-gof-patterns/behavioral/state.md) | [`order-processing-state`](../examples/go/order-processing-state/README.md) |
-| [Domain Event](./04-enterprise-patterns/domain-event.md) | [`order-domain-event`](../examples/go/order-domain-event/README.md), [`order-processing-state`](../examples/go/order-processing-state/README.md) |
-| [Repository](./04-enterprise-patterns/repository.md) | [`order-repository-dto`](../examples/go/order-repository-dto/README.md), [`order-specification`](../examples/go/order-specification/README.md) |
-| [DTO](./04-enterprise-patterns/dto.md) | [`order-repository-dto`](../examples/go/order-repository-dto/README.md) |
-| [Specification](./04-enterprise-patterns/specification.md) | [`order-specification`](../examples/go/order-specification/README.md) |
-| [Payment system](./05-real-world-scenarios/payment-system.md) | [`payment-strategy`](../examples/go/payment-strategy/README.md) |
-| [Notification system](./05-real-world-scenarios/notification-system.md) | [`notification-adapter`](../examples/go/notification-adapter/README.md) |
-| [E-commerce checkout](./05-real-world-scenarios/ecommerce-checkout.md) | [`checkout-chain`](../examples/go/checkout-chain/README.md) |
-| [Order processing](./05-real-world-scenarios/order-processing.md) | [`order-processing-state`](../examples/go/order-processing-state/README.md), [`order-repository-dto`](../examples/go/order-repository-dto/README.md), [`order-domain-event`](../examples/go/order-domain-event/README.md), [`order-specification`](../examples/go/order-specification/README.md) |
+| [Command](./02-gof-patterns/behavioral/command.md) | [`checkout-chain` in Go](../examples/go/checkout-chain/README.md), [`checkout-chain` in TypeScript](../examples/typescript/checkout-chain/README.md), [`order-domain-event` in Go](../examples/go/order-domain-event/README.md), [`order-domain-event` in TypeScript](../examples/typescript/order-domain-event/README.md) |
+| [Chain of Responsibility](./02-gof-patterns/behavioral/chain-of-responsibility.md) | [`checkout-chain` in Go](../examples/go/checkout-chain/README.md), [`checkout-chain` in TypeScript](../examples/typescript/checkout-chain/README.md) |
+| [State](./02-gof-patterns/behavioral/state.md) | [`order-processing-state` in Go](../examples/go/order-processing-state/README.md), [`order-processing-state` in TypeScript](../examples/typescript/order-processing-state/README.md) |
+| [Domain Event](./04-enterprise-patterns/domain-event.md) | [`order-domain-event`](../examples/go/order-domain-event/README.md), [`order-processing-state` in Go](../examples/go/order-processing-state/README.md), [`order-processing-state` in TypeScript](../examples/typescript/order-processing-state/README.md) |
+| [Repository](./04-enterprise-patterns/repository.md) | [`order-repository-dto` in Go](../examples/go/order-repository-dto/README.md), [`order-repository-dto` in TypeScript](../examples/typescript/order-repository-dto/README.md), [`order-specification` in Go](../examples/go/order-specification/README.md), [`order-specification` in TypeScript](../examples/typescript/order-specification/README.md) |
+| [DTO](./04-enterprise-patterns/dto.md) | [`order-repository-dto` in Go](../examples/go/order-repository-dto/README.md), [`order-repository-dto` in TypeScript](../examples/typescript/order-repository-dto/README.md) |
+| [Specification](./04-enterprise-patterns/specification.md) | [`order-specification` in Go](../examples/go/order-specification/README.md), [`order-specification` in TypeScript](../examples/typescript/order-specification/README.md) |
+| [Payment system](./05-real-world-scenarios/payment-system.md) | [`payment-strategy` in Go](../examples/go/payment-strategy/README.md), [`payment-strategy` in TypeScript](../examples/typescript/payment-strategy/README.md) |
+| [Notification system](./05-real-world-scenarios/notification-system.md) | [`notification-adapter` in Go](../examples/go/notification-adapter/README.md), [`notification-adapter` in TypeScript](../examples/typescript/notification-adapter/README.md) |
+| [E-commerce checkout](./05-real-world-scenarios/ecommerce-checkout.md) | [`checkout-chain` in Go](../examples/go/checkout-chain/README.md), [`checkout-chain` in TypeScript](../examples/typescript/checkout-chain/README.md) |
+| [Order processing](./05-real-world-scenarios/order-processing.md) | [`order-processing-state` in Go](../examples/go/order-processing-state/README.md), [`order-processing-state` in TypeScript](../examples/typescript/order-processing-state/README.md), [`order-repository-dto` in Go](../examples/go/order-repository-dto/README.md), [`order-repository-dto` in TypeScript](../examples/typescript/order-repository-dto/README.md), [`order-domain-event` in Go](../examples/go/order-domain-event/README.md), [`order-domain-event` in TypeScript](../examples/typescript/order-domain-event/README.md), [`order-specification` in Go](../examples/go/order-specification/README.md), [`order-specification` in TypeScript](../examples/typescript/order-specification/README.md) |
 
 Guides not listed here are currently documentation-only by design.
+
+## Coverage Summary
+
+| Coverage State | Topics |
+|---|---|
+| Runnable in Go and TypeScript | payment system, notification system, e-commerce checkout, state, repository, DTO, domain event, specification |
+| Runnable in Go only | none in the current core example set |
+| Docs only by design | architecture guides, anti-patterns, introduction material, checklists, several scenarios without a strong small-example fit yet |
 
 ## Architecture Guides
 
