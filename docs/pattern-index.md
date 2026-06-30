@@ -42,6 +42,30 @@ This index is a navigation layer for the current repository state. It focuses on
 | [DTO](./04-enterprise-patterns/dto.md) | Enterprise | Make boundary data explicit when raw arrays or models create coupling. |
 | [Specification](./04-enterprise-patterns/specification.md) | Enterprise | Name and compose reusable business criteria when rules drift across handlers and queries. |
 
+## Runnable Example Coverage
+
+The repository is primarily documentation-first, but selected guides now have small runnable Go counterparts under [examples/go](../examples/go/README.md).
+
+| Guide or Scenario | Runnable Example |
+|---|---|
+| [Factory](./02-gof-patterns/creational/factory.md) | [`payment-strategy`](../examples/go/payment-strategy/README.md) |
+| [Strategy](./02-gof-patterns/behavioral/strategy.md) | [`payment-strategy`](../examples/go/payment-strategy/README.md) |
+| [Adapter](./02-gof-patterns/structural/adapter.md) | [`notification-adapter`](../examples/go/notification-adapter/README.md) |
+| [Decorator](./02-gof-patterns/structural/decorator.md) | [`notification-adapter`](../examples/go/notification-adapter/README.md) |
+| [Command](./02-gof-patterns/behavioral/command.md) | [`checkout-chain`](../examples/go/checkout-chain/README.md), [`order-domain-event`](../examples/go/order-domain-event/README.md) |
+| [Chain of Responsibility](./02-gof-patterns/behavioral/chain-of-responsibility.md) | [`checkout-chain`](../examples/go/checkout-chain/README.md) |
+| [State](./02-gof-patterns/behavioral/state.md) | [`order-processing-state`](../examples/go/order-processing-state/README.md) |
+| [Domain Event](./04-enterprise-patterns/domain-event.md) | [`order-domain-event`](../examples/go/order-domain-event/README.md), [`order-processing-state`](../examples/go/order-processing-state/README.md) |
+| [Repository](./04-enterprise-patterns/repository.md) | [`order-repository-dto`](../examples/go/order-repository-dto/README.md), [`order-specification`](../examples/go/order-specification/README.md) |
+| [DTO](./04-enterprise-patterns/dto.md) | [`order-repository-dto`](../examples/go/order-repository-dto/README.md) |
+| [Specification](./04-enterprise-patterns/specification.md) | [`order-specification`](../examples/go/order-specification/README.md) |
+| [Payment system](./05-real-world-scenarios/payment-system.md) | [`payment-strategy`](../examples/go/payment-strategy/README.md) |
+| [Notification system](./05-real-world-scenarios/notification-system.md) | [`notification-adapter`](../examples/go/notification-adapter/README.md) |
+| [E-commerce checkout](./05-real-world-scenarios/ecommerce-checkout.md) | [`checkout-chain`](../examples/go/checkout-chain/README.md) |
+| [Order processing](./05-real-world-scenarios/order-processing.md) | [`order-processing-state`](../examples/go/order-processing-state/README.md), [`order-repository-dto`](../examples/go/order-repository-dto/README.md), [`order-domain-event`](../examples/go/order-domain-event/README.md), [`order-specification`](../examples/go/order-specification/README.md) |
+
+Guides not listed here are currently documentation-only by design.
+
 ## Architecture Guides
 
 | Architecture | Primary Use |

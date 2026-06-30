@@ -40,6 +40,7 @@ If you are new to the repository, begin with:
 - [Real-World Scenarios](./docs/05-real-world-scenarios)
 - [Anti-Patterns](./docs/06-anti-patterns)
 - [Review Checklists](./docs/07-checklists)
+- [Runnable Examples](./examples)
 
 ## Repository Principles
 
@@ -105,6 +106,24 @@ Post-MVP concept expansion is now extending the repository with:
 - Additional structural and enterprise patterns
 - Architecture decision guides
 - Additional real-world scenarios
+- Small runnable Go examples for selected patterns and scenarios
+
+## Runnable Coverage
+
+The repository is still documentation-first, but a focused set of runnable Go examples now exists for the patterns where a small framework-free sample adds learning value.
+
+Current runnable examples:
+
+- [Go examples index](./examples/go/README.md)
+- Strategy plus Factory: `payment-strategy`
+- Adapter plus Decorator: `notification-adapter`
+- Chain of Responsibility plus Command: `checkout-chain`
+- State: `order-processing-state`
+- Repository plus DTO: `order-repository-dto`
+- Domain Event: `order-domain-event`
+- Specification: `order-specification`
+
+Not every guide has a runnable counterpart yet. Architecture guides, anti-patterns, and some conceptual docs remain intentionally documentation-only.
 
 ## Contributing
 
