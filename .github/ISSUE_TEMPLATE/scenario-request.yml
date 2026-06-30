@@ -1,0 +1,47 @@
+name: Scenario request
+description: Propose a new real-world scenario guide.
+title: "Scenario request: "
+labels:
+  - documentation
+  - scenario
+body:
+  - type: input
+    id: scenario_name
+    attributes:
+      label: Scenario name
+      placeholder: Payment system
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      placeholder: fintech
+    validations:
+      required: true
+  - type: textarea
+    id: problem_description
+    attributes:
+      label: Problem description
+      description: Describe the project problem that this scenario should explain.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Include business, technical, maintainability, or testing constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: candidate_patterns
+    attributes:
+      label: Candidate patterns
+      description: List likely patterns or alternatives.
+  - type: textarea
+    id: failure_modes
+    attributes:
+      label: Failure modes
+      description: List the main failure modes or design risks that should be covered.
+    validations:
+      required: true

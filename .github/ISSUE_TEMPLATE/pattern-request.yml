@@ -1,0 +1,47 @@
+name: Pattern request
+description: Propose a new pattern guide for the repository.
+title: "Pattern request: "
+labels:
+  - documentation
+  - pattern
+body:
+  - type: input
+    id: pattern_name
+    attributes:
+      label: Pattern name
+      placeholder: Strategy
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      placeholder: behavioral
+    validations:
+      required: true
+  - type: textarea
+    id: real_world_problem
+    attributes:
+      label: Real-world problem
+      description: Which recurring problem should this pattern help explain?
+    validations:
+      required: true
+  - type: textarea
+    id: example_scenario
+    attributes:
+      label: Example scenario
+      description: Give a realistic project situation where this pattern appears.
+    validations:
+      required: true
+  - type: textarea
+    id: related_patterns
+    attributes:
+      label: Related patterns
+      description: List related or competing patterns if relevant.
+  - type: textarea
+    id: why_add
+    attributes:
+      label: Why this should be added
+      description: Explain why the repository would be more useful with this guide.
+    validations:
+      required: true

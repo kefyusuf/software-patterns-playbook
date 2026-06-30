@@ -1,0 +1,35 @@
+name: Correction
+description: Report a factual issue, weak explanation, or consistency problem.
+title: "Correction: "
+labels:
+  - documentation
+  - correction
+body:
+  - type: input
+    id: file_path
+    attributes:
+      label: File path
+      placeholder: docs/02-gof-patterns/behavioral/strategy.md
+    validations:
+      required: true
+  - type: textarea
+    id: current_problem
+    attributes:
+      label: Current problem
+      description: What is incorrect, unclear, or inconsistent?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested_correction
+    attributes:
+      label: Suggested correction
+      description: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: supporting_reasoning
+    attributes:
+      label: Supporting reasoning
+      description: Explain why the correction is more accurate or useful.
+    validations:
+      required: true
