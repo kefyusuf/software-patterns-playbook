@@ -26,10 +26,20 @@ Finish with real-world scenarios to see how multiple patterns work together in a
 
 If you are new to the repository, begin with:
 
-- [What Is a Pattern?](/E:/projects/software-patterns-playbook/docs/00-introduction/what-is-a-pattern.md)
-- [Pattern vs Architecture](/E:/projects/software-patterns-playbook/docs/00-introduction/pattern-vs-architecture.md)
-- [When Not to Use Patterns](/E:/projects/software-patterns-playbook/docs/00-introduction/when-not-to-use-patterns.md)
-- [How To Read This Repository](/E:/projects/software-patterns-playbook/docs/00-introduction/how-to-read-this-repo.md)
+- [What Is a Pattern?](./docs/00-introduction/what-is-a-pattern.md)
+- [Pattern vs Architecture](./docs/00-introduction/pattern-vs-architecture.md)
+- [When Not to Use Patterns](./docs/00-introduction/when-not-to-use-patterns.md)
+- [How To Read This Repository](./docs/00-introduction/how-to-read-this-repo.md)
+
+## Key Paths
+
+- [Pattern Index](./docs/pattern-index.md)
+- [Decision Guides](./docs/01-decision-guides)
+- [Core Pattern Guides](./docs/02-gof-patterns)
+- [Architecture Guides](./docs/03-architecture-patterns)
+- [Real-World Scenarios](./docs/05-real-world-scenarios)
+- [Anti-Patterns](./docs/06-anti-patterns)
+- [Review Checklists](./docs/07-checklists)
 
 ## Repository Principles
 
@@ -79,7 +89,9 @@ The MVP does not include:
 
 ## Current Status
 
-The repository currently starts from a PRD and is being built in small, verified phases:
+The repository started from a PRD and has been built through small, verified phases.
+
+Current coverage includes:
 
 1. Foundation contract
 2. Content governance
@@ -88,10 +100,16 @@ The repository currently starts from a PRD and is being built in small, verified
 5. Scenario layer
 6. Anti-overengineering layer and MVP review
 
+Post-MVP concept expansion is now extending the repository with:
+
+- Additional structural and enterprise patterns
+- Architecture decision guides
+- Additional real-world scenarios
+
 ## Contributing
 
-This project is learning-first and contributor-ready. Use the files under `templates/` as the source of truth for new content structure and read [CONTRIBUTING.md](/E:/projects/software-patterns-playbook/CONTRIBUTING.md) before opening a pull request.
+This project is learning-first and contributor-ready. Use the files under `templates/` as the source of truth for new content structure and read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
 
 ## License
 
-This repository uses the MIT License. See [LICENSE](/E:/projects/software-patterns-playbook/LICENSE).
+This repository uses the MIT License. See [LICENSE](./LICENSE).

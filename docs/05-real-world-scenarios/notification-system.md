@@ -27,15 +27,15 @@ An application must send notifications through different channels such as email,
 
 | Pattern | Why It Helps |
 |---|---|
-| Adapter | Normalizes channel vendors behind stable internal sender contracts. |
-| Strategy | Selects the correct channel behavior based on event type, user preference, or delivery rule. |
-| Decorator | Adds logging, metrics, or auditing around senders without changing the base delivery implementation. |
+| [Adapter](../02-gof-patterns/structural/adapter.md) | Normalizes channel vendors behind stable internal sender contracts. |
+| [Strategy](../02-gof-patterns/behavioral/strategy.md) | Selects the correct channel behavior based on event type, user preference, or delivery rule. |
+| [Decorator](../02-gof-patterns/structural/decorator.md) | Adds logging, metrics, or auditing around senders without changing the base delivery implementation. |
 
 ## Not Recommended Initially
 
 | Pattern | Why It May Be Too Much |
 |---|---|
-| Command | Useful later for async delivery queues, but not required for an MVP synchronous send path. |
+| [Command](../02-gof-patterns/behavioral/command.md) | Useful later for async delivery queues, but not required for an MVP synchronous send path. |
 | Observer | Can make flow less explicit too early if simple notification triggers are still manageable in application services. |
 
 ## Suggested Project Structure
@@ -88,3 +88,11 @@ As volume grows, asynchronous delivery, retry policies, delivery batching, and e
 - [ ] Is the chosen abstraction justified?
 - [ ] Are duplicate requests or retries handled where needed?
 - [ ] Is the initial design simpler than the future design?
+
+## Related Reading
+
+- [Choose by Problem](../01-decision-guides/choose-by-problem.md)
+- [Choose by Project Layer](../01-decision-guides/choose-by-project-layer.md)
+- [Adapter](../02-gof-patterns/structural/adapter.md)
+- [Strategy](../02-gof-patterns/behavioral/strategy.md)
+- [Decorator](../02-gof-patterns/structural/decorator.md)

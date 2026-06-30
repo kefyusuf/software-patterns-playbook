@@ -27,9 +27,9 @@ An application must coordinate a checkout flow that validates cart data, applies
 
 | Pattern | Why It Helps |
 |---|---|
-| Chain of Responsibility | Breaks checkout into ordered validation and processing steps. |
-| Command | Gives the checkout request a clear action shape that can later support dispatching or async handling. |
-| Strategy | Supports payment-method or policy variation inside the workflow without one giant branch block. |
+| [Chain of Responsibility](../02-gof-patterns/behavioral/chain-of-responsibility.md) | Breaks checkout into ordered validation and processing steps. |
+| [Command](../02-gof-patterns/behavioral/command.md) | Gives the checkout request a clear action shape that can later support dispatching or async handling. |
+| [Strategy](../02-gof-patterns/behavioral/strategy.md) | Supports payment-method or policy variation inside the workflow without one giant branch block. |
 
 ## Not Recommended Initially
 
@@ -89,3 +89,11 @@ As checkout becomes distributed across services or needs asynchronous compensati
 - [ ] Is the chosen abstraction justified?
 - [ ] Are duplicate requests or retries handled where needed?
 - [ ] Is the initial design simpler than the future design?
+
+## Related Reading
+
+- [Choose by Problem](../01-decision-guides/choose-by-problem.md)
+- [Choose by Code Smell](../01-decision-guides/choose-by-code-smell.md)
+- [Command](../02-gof-patterns/behavioral/command.md)
+- [Chain of Responsibility](../02-gof-patterns/behavioral/chain-of-responsibility.md)
+- [Strategy](../02-gof-patterns/behavioral/strategy.md)

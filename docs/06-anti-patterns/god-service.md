@@ -48,3 +48,10 @@ A `CheckoutService` validates the cart, charges payment, reserves inventory, app
 - [ ] Is this abstraction solving a real problem?
 - [ ] Is global state or pass-through indirection increasing coupling?
 - [ ] Would a simpler structure be easier to test and maintain?
+
+## Related Reading
+
+- [Choose by Code Smell](../01-decision-guides/choose-by-code-smell.md)
+- [Command](../02-gof-patterns/behavioral/command.md)
+- [Chain of Responsibility](../02-gof-patterns/behavioral/chain-of-responsibility.md)
+- [E-commerce Checkout](../05-real-world-scenarios/ecommerce-checkout.md)

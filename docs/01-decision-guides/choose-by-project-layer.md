@@ -8,11 +8,11 @@ Patterns are not layer-neutral. The same abstraction can help in one layer and c
 
 | Layer | Typical Pressure | Good Candidates | Usually Too Much Too Early |
 |---|---|---|---|
-| Presentation | Formatting, UI actions, request mapping | Command, Decorator | Deep Strategy hierarchies for simple view logic |
-| Application | Workflow orchestration, policy selection, use-case coordination | Strategy, Command, Factory, Chain of Responsibility | Domain-wide base classes introduced before workflows stabilize |
-| Domain | Stable business rules and explicit language | Strategy, sometimes Factory | Adapter for vendor concerns, infrastructure-driven abstractions |
-| Infrastructure | External APIs, persistence, delivery channels | Adapter, Decorator, Factory | Domain-heavy abstractions that only mirror vendor APIs |
-| Testing | Scenario setup, readable fixtures | Builder, Factory | Shared mutable global helpers that hide test intent |
+| Presentation | Formatting, UI actions, request mapping | [Command](../02-gof-patterns/behavioral/command.md), [Decorator](../02-gof-patterns/structural/decorator.md), [DTO](../04-enterprise-patterns/dto.md) | Deep [Strategy](../02-gof-patterns/behavioral/strategy.md) hierarchies for simple view logic |
+| Application | Workflow orchestration, policy selection, use-case coordination | [Strategy](../02-gof-patterns/behavioral/strategy.md), [Command](../02-gof-patterns/behavioral/command.md), [Factory](../02-gof-patterns/creational/factory.md), [Chain of Responsibility](../02-gof-patterns/behavioral/chain-of-responsibility.md), [Facade](../02-gof-patterns/structural/facade.md), [DTO](../04-enterprise-patterns/dto.md) | Domain-wide base classes introduced before workflows stabilize |
+| Domain | Stable business rules and explicit language | [Strategy](../02-gof-patterns/behavioral/strategy.md), sometimes [Factory](../02-gof-patterns/creational/factory.md) or [Domain Event](../04-enterprise-patterns/domain-event.md) | [Adapter](../02-gof-patterns/structural/adapter.md) for vendor concerns, infrastructure-driven abstractions |
+| Infrastructure | External APIs, persistence, delivery channels | [Adapter](../02-gof-patterns/structural/adapter.md), [Decorator](../02-gof-patterns/structural/decorator.md), [Factory](../02-gof-patterns/creational/factory.md), [Repository](../04-enterprise-patterns/repository.md) | Domain-heavy abstractions that only mirror vendor APIs |
+| Testing | Scenario setup, readable fixtures | [Builder](../02-gof-patterns/creational/builder.md), [Factory](../02-gof-patterns/creational/factory.md) | Shared mutable global helpers that hide test intent |
 
 ## Fast Heuristics
 
@@ -42,3 +42,10 @@ Before introducing a pattern by layer, ask:
 - Would a plain function in the current module be enough?
 - Is the variation real now, or only expected later?
 - Is the abstraction removing coupling, or just moving it?
+
+## See Also
+
+- [Payment System](../05-real-world-scenarios/payment-system.md)
+- [Notification System](../05-real-world-scenarios/notification-system.md)
+- [E-commerce Checkout](../05-real-world-scenarios/ecommerce-checkout.md)
+- [API Client Integration](../05-real-world-scenarios/api-client-integration.md)

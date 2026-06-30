@@ -47,3 +47,9 @@ A `UserRepository` contains only thin `create`, `update`, `delete`, and `find` w
 - [ ] Is this abstraction solving a real problem?
 - [ ] Is global state or pass-through indirection increasing coupling?
 - [ ] Would a simpler structure be easier to test and maintain?
+
+## Related Reading
+
+- [Repository](../04-enterprise-patterns/repository.md)
+- [Choose by Code Smell](../01-decision-guides/choose-by-code-smell.md)
+- [Choose by Project Layer](../01-decision-guides/choose-by-project-layer.md)

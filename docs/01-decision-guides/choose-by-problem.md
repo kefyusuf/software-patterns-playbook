@@ -8,14 +8,14 @@ Patterns are not goals. Start from a recurring pressure in the codebase, then pi
 
 | Problem | Start Here | Why | Simpler Alternative |
 |---|---|---|---|
-| External providers have different APIs | Adapter | Protects your application from vendor-specific interfaces. | A thin translation function if there is only one integration point. |
-| Business rules switch by payment type, tenant, or channel | Strategy | Removes large branching logic from a central service. | One conditional block if the rules are still few and stable. |
-| Object creation has many optional parts or setup steps | Builder | Makes complex construction readable and explicit. | Named constructors or a plain factory if combinations stay small. |
-| A workflow passes through ordered validation or processing steps | Chain of Responsibility | Keeps a long flow modular and reorderable. | One service method if the flow is short and unlikely to change. |
-| Actions need to be queued, retried, or audited | Command | Represents a request as a distinct action unit. | A direct method call if there is no scheduling or action history need. |
-| You need one stable entry point for creation choices | Factory | Centralizes object creation and selection logic. | Inline construction if there is no variation yet. |
-| You need optional behavior wrapped around an existing service | Decorator | Adds cross-cutting behavior without changing the base implementation. | Add the behavior directly if there is only one consumer and low reuse. |
-| You think you need one global instance | Singleton | Rarely justified; treat as a warning flag first. | Dependency injection with explicit lifetime management. |
+| External providers have different APIs | [Adapter](../02-gof-patterns/structural/adapter.md) | Protects your application from vendor-specific interfaces. | A thin translation function if there is only one integration point. |
+| Business rules switch by payment type, tenant, or channel | [Strategy](../02-gof-patterns/behavioral/strategy.md) | Removes large branching logic from a central service. | One conditional block if the rules are still few and stable. |
+| Object creation has many optional parts or setup steps | [Builder](../02-gof-patterns/creational/builder.md) | Makes complex construction readable and explicit. | Named constructors or a plain [Factory](../02-gof-patterns/creational/factory.md) if combinations stay small. |
+| A workflow passes through ordered validation or processing steps | [Chain of Responsibility](../02-gof-patterns/behavioral/chain-of-responsibility.md) | Keeps a long flow modular and reorderable. | One service method if the flow is short and unlikely to change. |
+| Actions need to be queued, retried, or audited | [Command](../02-gof-patterns/behavioral/command.md) | Represents a request as a distinct action unit. | A direct method call if there is no scheduling or action history need. |
+| You need one stable entry point for creation choices | [Factory](../02-gof-patterns/creational/factory.md) | Centralizes object creation and selection logic. | Inline construction if there is no variation yet. |
+| You need optional behavior wrapped around an existing service | [Decorator](../02-gof-patterns/structural/decorator.md) | Adds cross-cutting behavior without changing the base implementation. | Add the behavior directly if there is only one consumer and low reuse. |
+| You think you need one global instance | [Singleton](../02-gof-patterns/creational/singleton.md) | Rarely justified; treat as a warning flag first. | Dependency injection with explicit lifetime management. |
 
 ## Common Traps
 
@@ -45,3 +45,10 @@ Do not add a pattern just because a category seems to fit. Stop if:
 - the problem is still local and unlikely to repeat
 - the abstraction costs more than the duplication it removes
 - the team cannot explain the trade-offs in one short paragraph
+
+## See Also
+
+- [Payment System](../05-real-world-scenarios/payment-system.md)
+- [Notification System](../05-real-world-scenarios/notification-system.md)
+- [API Client Integration](../05-real-world-scenarios/api-client-integration.md)
+- [E-commerce Checkout](../05-real-world-scenarios/ecommerce-checkout.md)

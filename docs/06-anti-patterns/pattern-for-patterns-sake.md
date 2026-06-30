@@ -47,3 +47,10 @@ A service with one conditional becomes a full Strategy family before a second re
 - [ ] Is this abstraction solving a real problem?
 - [ ] Is global state or pass-through indirection increasing coupling?
 - [ ] Would a simpler structure be easier to test and maintain?
+
+## Related Reading
+
+- [Choose by Problem](../01-decision-guides/choose-by-problem.md)
+- [Choose by Code Smell](../01-decision-guides/choose-by-code-smell.md)
+- [Factory](../02-gof-patterns/creational/factory.md)
+- [Strategy](../02-gof-patterns/behavioral/strategy.md)
