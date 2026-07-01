@@ -1,8 +1,10 @@
 # Diagrams
 
-This directory is reserved for diagrams that support explanation without replacing the written guidance.
+This directory is reserved for diagrams that support explanation
+without replacing the written guidance.
 
-The MVP stays Markdown-first, so diagrams should be lightweight and directly useful:
+The repository stays Markdown-first, so diagrams should be lightweight
+and directly useful:
 
 - Mermaid flow diagrams
 - Layer placement diagrams
