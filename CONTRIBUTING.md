@@ -42,6 +42,14 @@ Every document should be useful to a developer building an actual project. That 
 - Explicit misuse risks
 - No universal best-practice claims without context
 
+## Guide Snippets And Runnable Examples
+
+Pattern guide snippets are compact teaching examples. They may omit framework setup, persistence details, imports, or full application wiring when that keeps the pattern boundary easier to see.
+
+Runnable source of truth lives under `examples/`. If a code block is meant to be compiled or executed, put it in the relevant example directory and keep the guide linked to that example. Do not describe illustrative snippets as runnable examples.
+
+Use language fences honestly. If a guide uses a short PHP-style snippet to show object-oriented structure, that is illustrative guide code; Go and TypeScript parity is tracked through the runnable example folders.
+
 ## File Naming
 
 - Use lowercase kebab-case filenames.

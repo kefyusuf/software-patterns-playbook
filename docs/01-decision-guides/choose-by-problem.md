@@ -15,6 +15,8 @@ codebase, then pick the smallest abstraction that addresses it.
 | Object creation has many optional parts or setup steps | [Builder](../02-gof-patterns/creational/builder.md) | Makes complex construction readable and explicit. | Named constructors or a plain [Factory](../02-gof-patterns/creational/factory.md) if combinations stay small. |
 | A workflow passes through ordered validation or processing steps | [Chain of Responsibility](../02-gof-patterns/behavioral/chain-of-responsibility.md) | Keeps a long flow modular and reorderable. | One service method if the flow is short and unlikely to change. |
 | Actions need to be queued, retried, or audited | [Command](../02-gof-patterns/behavioral/command.md) | Represents a request as a distinct action unit. | A direct method call if there is no scheduling or action history need. |
+| Several independent receivers react to the same occurrence | [Observer](../02-gof-patterns/behavioral/observer.md) | Decouples the subject from local follow-up reactions. | Direct calls if there is only one follow-up and the flow should stay linear. |
+| Several workflows share the same required sequence but vary in a few steps | [Template Method](../02-gof-patterns/behavioral/template-method.md) | Protects the workflow skeleton while allowing controlled variation. | Extract shared functions or inject a Strategy when inheritance is not needed. |
 | You need one stable entry point for creation choices | [Factory](../02-gof-patterns/creational/factory.md) | Centralizes object creation and selection logic. | Inline construction if there is no variation yet. |
 | You need optional behavior wrapped around an existing service | [Decorator](../02-gof-patterns/structural/decorator.md) | Adds cross-cutting behavior without changing the base implementation. | Add the behavior directly if there is only one consumer and low reuse. |
 | You think you need one global instance | [Singleton](../02-gof-patterns/creational/singleton.md) | Rarely justified; treat as a warning flag first. | Dependency injection with explicit lifetime management. |
@@ -25,6 +27,8 @@ codebase, then pick the smallest abstraction that addresses it.
 - Reaching for Builder when the object is not actually complex.
 - Reaching for Singleton to avoid passing dependencies explicitly.
 - Reaching for Chain of Responsibility when the flow order never changes.
+- Reaching for Observer when reaction order and failure behavior are critical but undocumented.
+- Reaching for Template Method when a small Strategy would avoid inheritance coupling.
 
 ## Problem Grouping
 
@@ -38,6 +42,10 @@ Strategy or Factory when provider selection becomes dynamic.
 Checkout flows, approval flows, and validation pipelines often start
 with Command or Chain of Responsibility depending on whether the main
 concern is ordered processing or action representation.
+
+Background jobs and import workflows may use Template Method when many
+jobs share a real skeleton, but start with explicit commands and plain
+services first.
 
 ### Construction Problems
 
@@ -58,3 +66,4 @@ Do not add a pattern just because a category seems to fit. Stop if:
 - [Notification System](../05-real-world-scenarios/notification-system.md)
 - [API Client Integration](../05-real-world-scenarios/api-client-integration.md)
 - [E-commerce Checkout](../05-real-world-scenarios/ecommerce-checkout.md)
+- [Background Job Processing](../05-real-world-scenarios/background-job-processing.md)

@@ -17,6 +17,8 @@ concrete refactoring direction.
 | Transport or handler boundaries pass loose arrays everywhere | Boundary data is implicit and fragile | [DTO](../04-enterprise-patterns/dto.md) | A small explicit structure or named parameters if the boundary is still tiny. |
 | Query logic repeats across several use cases with domain-specific retrieval rules | Persistence access is leaking into orchestration code | [Repository](../04-enterprise-patterns/repository.md) | Direct persistence code if the use case is simple and local. |
 | The same eligibility or filtering rule keeps reappearing in queries and handlers | Business criteria is drifting across the codebase | [Specification](../04-enterprise-patterns/specification.md) | Keep the rule inline if it is still local and obvious. |
+| One workflow directly calls many independent follow-up behaviors | Local reactions are coupled to the initiating use case | [Observer](../02-gof-patterns/behavioral/observer.md) or [Domain Event](../04-enterprise-patterns/domain-event.md) | Keep direct calls if the follow-up behavior is essential and should remain linear. |
+| Several jobs or imports repeat the same sequence with small step differences | Workflow order is duplicated and can drift | [Template Method](../02-gof-patterns/behavioral/template-method.md) | Extract shared functions or compose a Strategy if inheritance adds little value. |
 
 ## Smells That Do Not Need a Pattern Yet
 
@@ -24,6 +26,8 @@ concrete refactoring direction.
 - A single integration point
 - One-time setup code
 - A constructor that is merely slightly long
+- A single follow-up reaction after one action
+- Two similar workflows that are still easier to read separately
 
 These often need cleanup, not a named pattern.
 
@@ -46,3 +50,4 @@ These often need cleanup, not a named pattern.
 - [Pattern for Pattern's Sake](../06-anti-patterns/pattern-for-patterns-sake.md)
 - [Repository Everywhere](../06-anti-patterns/repository-everywhere.md)
 - [God Service](../06-anti-patterns/god-service.md)
+- [Testing With Patterns](./testing-with-patterns.md)

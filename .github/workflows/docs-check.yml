@@ -15,3 +15,32 @@ jobs:
         with:
           globs: |
             **/*.md
+
+  go-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: Test Go examples
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' modfile; do
+            dir="$(dirname "$modfile")"
+            echo "Testing $dir"
+            (cd "$dir" && go test ./...)
+          done < <(find examples/go -name go.mod -print0)
+
+  typescript-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build TypeScript examples
+        run: npx --yes --package typescript tsc -p examples/typescript/tsconfig.json
+      - name: Test TypeScript examples
+        run: npm --prefix examples/typescript test

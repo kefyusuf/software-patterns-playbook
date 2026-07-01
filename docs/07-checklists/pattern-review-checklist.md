@@ -16,3 +16,4 @@ See also:
 - [Choose by Problem](../01-decision-guides/choose-by-problem.md)
 - [Choose by Project Layer](../01-decision-guides/choose-by-project-layer.md)
 - [Pattern vs Pattern](../01-decision-guides/pattern-vs-pattern.md)
+- [Testing With Patterns](../01-decision-guides/testing-with-patterns.md)

@@ -2,7 +2,7 @@
 
 This directory is reserved for larger structural guidance such as layered architecture, hexagonal architecture, modular monolith, and similar system-shaping patterns.
 
-These topics are intentionally outside the current MVP because the repository first focuses on smaller decision guides, core patterns, scenarios, and anti-patterns.
+These topics stay intentionally documentation-focused unless a structural guide has enough project pressure and trade-off depth to justify standalone treatment.
 
 Future additions should explain:
 

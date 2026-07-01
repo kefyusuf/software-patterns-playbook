@@ -17,6 +17,7 @@ This index is a navigation layer for the current repository state. It focuses on
 | [Choose by Project Layer](./01-decision-guides/choose-by-project-layer.md) | Decide which patterns make sense in presentation, application, domain, infrastructure, or testing. |
 | [Choose by Code Smell](./01-decision-guides/choose-by-code-smell.md) | Move from concrete code smells to candidate patterns or simpler fixes. |
 | [Pattern vs Pattern](./01-decision-guides/pattern-vs-pattern.md) | Compare similar or commonly confused patterns. |
+| [Testing With Patterns](./01-decision-guides/testing-with-patterns.md) | Decide when to use mocks, fakes, real collaborators, and contract tests around pattern boundaries. |
 
 ## Core Pattern Guides
 
@@ -31,6 +32,8 @@ This index is a navigation layer for the current repository state. It focuses on
 | [Command](./02-gof-patterns/behavioral/command.md) | Behavioral | Represent an action as an object when invocation, queuing, or auditing matters. |
 | [Chain of Responsibility](./02-gof-patterns/behavioral/chain-of-responsibility.md) | Behavioral | Break a workflow into ordered handlers when each step may pass work onward. |
 | [State](./02-gof-patterns/behavioral/state.md) | Behavioral | Model lifecycle-driven behavior when allowed actions depend on the current stage of an object. |
+| [Observer](./02-gof-patterns/behavioral/observer.md) | Behavioral | Let listeners react to a subject's change or announcement without direct receiver coupling. |
+| [Template Method](./02-gof-patterns/behavioral/template-method.md) | Behavioral | Keep an algorithm skeleton fixed while selected steps vary in subclasses. |
 
 ## Extended Pattern Guides
 
@@ -72,7 +75,7 @@ Guides not listed here are currently documentation-only by design.
 |---|---|
 | Runnable in Go and TypeScript | payment system, notification system, e-commerce checkout, state, repository, DTO, domain event, specification |
 | Runnable in Go only | none in the current core example set |
-| Docs only by design | architecture guides, anti-patterns, introduction material, checklists, several scenarios without a strong small-example fit yet |
+| Docs only by design | Observer, Template Method, testing guidance, background job processing, architecture guides, anti-patterns, introduction material, checklists, several scenarios without a strong small-example fit yet |
 
 ## Architecture Guides
 
@@ -95,6 +98,7 @@ Guides not listed here are currently documentation-only by design.
 | [Order processing](./05-real-world-scenarios/order-processing.md) | Shows lifecycle coordination, downstream reactions, and order-state boundaries after checkout. |
 | [Admin panel / back-office actions](./05-real-world-scenarios/admin-panel.md) | Shows explicit admin commands, safe orchestration, and auditable operational workflows. |
 | [File upload system](./05-real-world-scenarios/file-upload-system.md) | Shows storage boundaries, upload metadata contracts, and optional processing wrappers. |
+| [Background job processing](./05-real-world-scenarios/background-job-processing.md) | Shows queue boundaries, retry-aware job workflows, and local lifecycle reactions. |
 
 ## Selection Rules
 

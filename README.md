@@ -9,6 +9,12 @@ This repository is not a pattern encyclopedia and it is not a framework manual. 
 - What simpler option may be enough for now?
 - Which mistakes usually appear before or after introducing a pattern?
 
+## Quality Signals
+
+- License: [MIT](./LICENSE)
+- CI: [docs-check](./.github/workflows/docs-check.yml) validates Markdown plus runnable Go and TypeScript examples.
+- Example policy: runnable code lives under [examples](./examples); compact snippets inside guides are illustrative unless a guide links to a runnable example.
+
 ## Who This Is For
 
 - Beginner developers who know basic OOP but need problem-first explanations.
@@ -110,9 +116,13 @@ The TypeScript track currently includes:
 | Order processing / Repository / DTO | Yes | Yes | cross-language runnable |
 | Order processing / Domain Event | Yes | Yes | cross-language runnable |
 | Order processing / Specification | Yes | Yes | cross-language runnable |
-| Architecture guides | No | No | docs only |
-| Anti-pattern guides | No | No | docs only |
-| Introduction and checklists | No | No | docs only |
+| Application events / Observer | Docs only | Docs only | docs only |
+| Workflow skeletons / Template Method | Docs only | Docs only | docs only |
+| Background job processing | Docs only | Docs only | scenario guide |
+| Testing patterns and mocks | Docs only | Docs only | decision guide |
+| Architecture guides | Docs only | Docs only | docs only |
+| Anti-pattern guides | Docs only | Docs only | docs only |
+| Introduction and checklists | Docs only | Docs only | docs only |
 
 Not every guide has a runnable counterpart yet. Architecture guides, anti-patterns, and some conceptual docs remain intentionally documentation-only.
 
