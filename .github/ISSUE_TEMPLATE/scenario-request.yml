@@ -12,11 +12,36 @@ body:
       placeholder: Payment system
     validations:
       required: true
-  - type: input
+  - type: dropdown
     id: domain
     attributes:
       label: Domain
-      placeholder: fintech
+      description: Choose the closest project domain.
+      options:
+        - Payments or fintech
+        - E-commerce
+        - SaaS
+        - Admin or back-office
+        - File or media processing
+        - External API integration
+        - Background jobs
+        - Notifications
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: scenario_type
+    attributes:
+      label: Scenario type
+      description: Choose the main decision shape.
+      options:
+        - Provider or integration boundary
+        - Multi-step workflow
+        - Domain lifecycle
+        - Data access boundary
+        - Cross-cutting behavior
+        - Testing or review guidance
+        - Other
     validations:
       required: true
   - type: textarea
@@ -33,15 +58,38 @@ body:
       description: Include business, technical, maintainability, or testing constraints.
     validations:
       required: true
-  - type: textarea
+  - type: checkboxes
     id: candidate_patterns
     attributes:
       label: Candidate patterns
-      description: List likely patterns or alternatives.
-  - type: textarea
+      description: Select likely patterns or alternatives.
+      options:
+        - label: Strategy
+        - label: Factory
+        - label: Adapter
+        - label: Decorator
+        - label: Chain of Responsibility
+        - label: Command
+        - label: State
+        - label: Repository
+        - label: DTO
+        - label: Domain Event
+        - label: Specification
+        - label: Simpler procedural flow
+        - label: Other or unsure
+  - type: checkboxes
     id: failure_modes
     attributes:
       label: Failure modes
-      description: List the main failure modes or design risks that should be covered.
+      description: Select the main failure modes or design risks that should be covered.
+      options:
+        - label: Pattern overuse
+        - label: Hidden coupling
+        - label: Framework or vendor leakage
+        - label: Hard-to-test boundaries
+        - label: Unclear ownership between layers
+        - label: Inconsistent behavior across providers
+        - label: Missing rollback or retry path
+        - label: Other or unsure
     validations:
       required: true

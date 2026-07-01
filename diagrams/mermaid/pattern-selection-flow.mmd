@@ -1,0 +1,18 @@
+flowchart TD
+  problem["Recurring project problem"]
+  smell["Concrete code smell or pressure"]
+  layer["Affected project layer"]
+  simple["Simpler option is enough"]
+  candidate["Candidate pattern"]
+  compare["Compare trade-offs"]
+  guide["Pattern guide or scenario"]
+  avoid["Avoid pattern for now"]
+
+  problem --> smell
+  smell --> layer
+  layer --> simple
+  simple -- "Yes" --> avoid
+  simple -- "No" --> candidate
+  candidate --> compare
+  compare --> guide
+  compare -- "Costs exceed benefit" --> avoid

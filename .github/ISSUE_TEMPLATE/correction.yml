@@ -5,6 +5,41 @@ labels:
   - documentation
   - correction
 body:
+  - type: dropdown
+    id: content_area
+    attributes:
+      label: Content area
+      description: Choose the closest affected area.
+      options:
+        - Introduction
+        - Decision guide
+        - GoF pattern guide
+        - Architecture guide
+        - Enterprise pattern guide
+        - Real-world scenario
+        - Anti-pattern
+        - Checklist
+        - Example
+        - Template or contribution workflow
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      description: Choose the main problem.
+      options:
+        - Factual issue
+        - Weak or unclear explanation
+        - Missing trade-off
+        - Missing when-not-to-use guidance
+        - Inconsistent terminology
+        - Example drift
+        - Link or navigation issue
+        - Other
+    validations:
+      required: true
   - type: input
     id: file_path
     attributes:

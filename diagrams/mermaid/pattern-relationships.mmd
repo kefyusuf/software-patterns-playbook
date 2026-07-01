@@ -1,0 +1,22 @@
+flowchart TD
+  adapter["Adapter"]
+  decorator["Decorator"]
+  factory["Factory"]
+  strategy["Strategy"]
+  state["State"]
+  command["Command"]
+  chain["Chain of Responsibility"]
+  repository["Repository"]
+  dto["DTO"]
+  event["Domain Event"]
+  specification["Specification"]
+
+  factory -->|"chooses implementation"| strategy
+  factory -->|"creates external boundary object"| adapter
+  decorator -->|"wraps behavior around"| adapter
+  chain -->|"runs ordered steps"| command
+  strategy -. "caller chooses policy" .-> state
+  state -. "object stage chooses behavior" .-> strategy
+  repository -->|"returns stable data shape"| dto
+  specification -->|"filters or validates domain rule"| repository
+  event -->|"publishes completed domain fact"| command

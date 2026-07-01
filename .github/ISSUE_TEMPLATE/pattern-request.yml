@@ -12,11 +12,20 @@ body:
       placeholder: Strategy
     validations:
       required: true
-  - type: input
+  - type: dropdown
     id: category
     attributes:
       label: Category
-      placeholder: behavioral
+      description: Choose the closest guide category.
+      options:
+        - Behavioral
+        - Creational
+        - Structural
+        - Architecture
+        - Enterprise
+        - Anti-pattern
+        - Testing
+        - Other
     validations:
       required: true
   - type: textarea
@@ -33,11 +42,24 @@ body:
       description: Give a realistic project situation where this pattern appears.
     validations:
       required: true
-  - type: textarea
+  - type: checkboxes
     id: related_patterns
     attributes:
       label: Related patterns
-      description: List related or competing patterns if relevant.
+      description: Select common related or competing patterns if relevant.
+      options:
+        - label: Strategy
+        - label: Factory
+        - label: Adapter
+        - label: Decorator
+        - label: Chain of Responsibility
+        - label: Command
+        - label: State
+        - label: Repository
+        - label: DTO
+        - label: Domain Event
+        - label: Specification
+        - label: Other or unsure
   - type: textarea
     id: why_add
     attributes:

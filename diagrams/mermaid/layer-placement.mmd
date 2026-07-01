@@ -1,0 +1,17 @@
+flowchart LR
+  presentation["Presentation layer"]
+  application["Application layer"]
+  domain["Domain layer"]
+  infrastructure["Infrastructure layer"]
+  testing["Testing boundary"]
+
+  presentation -->|"Formats input and output"| application
+  application -->|"Orchestrates use cases"| domain
+  application -->|"Calls ports or gateways"| infrastructure
+  domain -->|"Owns rules and invariants"| application
+  infrastructure -->|"Adapts external systems"| application
+  testing -->|"Checks contracts and seams"| application
+
+  presentation -. "Keep UI decisions here" .-> presentation
+  domain -. "Avoid framework leakage" .-> domain
+  infrastructure -. "Hide vendor details" .-> infrastructure
