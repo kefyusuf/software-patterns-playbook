@@ -12,6 +12,7 @@ Use this checklist when evaluating whether a proposed design is proportionate to
 - [ ] Can the team explain why this structure is better now, not just later?
 
 See also:
+
 - [Choose by Code Smell](../01-decision-guides/choose-by-code-smell.md)
 - [Pattern for Pattern's Sake](../06-anti-patterns/pattern-for-patterns-sake.md)
 - [God Service](../06-anti-patterns/god-service.md)
