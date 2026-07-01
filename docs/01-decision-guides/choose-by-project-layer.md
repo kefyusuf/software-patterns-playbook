@@ -1,10 +1,12 @@
 # Choose by Project Layer
 
-Use this guide when the problem is clear and you want to know where an abstraction should live.
+Use this guide when the problem is clear and you want to know
+where an abstraction should live.
 
 ## Layer Rules
 
-Patterns are not layer-neutral. The same abstraction can help in one layer and create noise in another.
+Patterns are not layer-neutral. The same abstraction can help
+in one layer and create noise in another.
 
 | Layer | Typical Pressure | Good Candidates | Usually Too Much Too Early |
 |---|---|---|---|
@@ -29,11 +31,13 @@ If your domain model starts speaking HTTP client or provider SDK terminology, th
 
 ### Strategy Everywhere
 
-Not every variation belongs in a Strategy family. When a choice is local and stable, keep it close to the caller.
+Not every variation belongs in a Strategy family. When a choice
+is local and stable, keep it close to the caller.
 
 ### Factory as a Service Locator
 
-A factory should clarify creation. It should not become a hidden global resolver for unrelated dependencies.
+A factory should clarify creation. It should not become a hidden
+global resolver for unrelated dependencies.
 
 ## Simpler Alternatives
 

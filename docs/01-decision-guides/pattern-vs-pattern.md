@@ -1,6 +1,7 @@
 # Pattern vs Pattern
 
-Use this guide when two patterns appear similar on paper but lead to different maintenance outcomes.
+Use this guide when two patterns appear similar on paper
+but lead to different maintenance outcomes.
 
 ## Factory vs Builder
 
@@ -10,7 +11,10 @@ Use this guide when two patterns appear similar on paper but lead to different m
 | Best when | Variants differ | Setup steps or optional parts grow |
 | Too much when | There is only one obvious creation path | The object is simple and stable |
 
-Choose [Factory](../02-gof-patterns/creational/factory.md) when selection logic is the real problem. Choose [Builder](../02-gof-patterns/creational/builder.md) when construction readability is the real problem.
+Choose [Factory](../02-gof-patterns/creational/factory.md)
+when selection logic is the real problem. Choose
+[Builder](../02-gof-patterns/creational/builder.md)
+when construction readability is the real problem.
 
 ## Adapter vs Decorator
 
@@ -20,7 +24,10 @@ Choose [Factory](../02-gof-patterns/creational/factory.md) when selection logic 
 | Best when | External systems speak a different shape | You want to wrap extra behavior around a stable service |
 | Too much when | A tiny translation function is enough | The extra behavior is local and one-off |
 
-[Adapter](../02-gof-patterns/structural/adapter.md) changes the interface you expose. [Decorator](../02-gof-patterns/structural/decorator.md) keeps the interface and changes the behavior around it.
+[Adapter](../02-gof-patterns/structural/adapter.md)
+changes the interface you expose.
+[Decorator](../02-gof-patterns/structural/decorator.md)
+keeps the interface and changes the behavior around it.
 
 ## Strategy vs State
 
