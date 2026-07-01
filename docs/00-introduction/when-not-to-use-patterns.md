@@ -1,6 +1,8 @@
 # When Not to Use Patterns
 
-Patterns are useful only when they reduce real complexity. They are a poor trade when they add indirection faster than the code adds pressure.
+Patterns are useful only when they reduce real complexity. They are a
+poor trade when they add indirection faster than the code adds
+pressure.
 
 ## Common Cases Where You Should Wait
 
@@ -18,4 +20,5 @@ Patterns are useful only when they reduce real complexity. They are a poor trade
 
 ## Review Rule
 
-If the abstraction feels impressive but not obviously cheaper to maintain, it is probably too early.
+If the abstraction feels impressive but not obviously cheaper to
+maintain, it is probably too early.

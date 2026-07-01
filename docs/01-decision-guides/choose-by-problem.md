@@ -1,10 +1,12 @@
 # Choose by Problem
 
-Use this guide when you can describe the project problem but do not know the pattern name yet.
+Use this guide when you can describe the project problem but do not
+know the pattern name yet.
 
 ## Start With the Problem
 
-Patterns are not goals. Start from a recurring pressure in the codebase, then pick the smallest abstraction that addresses it.
+Patterns are not goals. Start from a recurring pressure in the
+codebase, then pick the smallest abstraction that addresses it.
 
 | Problem | Start Here | Why | Simpler Alternative |
 |---|---|---|---|
@@ -28,15 +30,19 @@ Patterns are not goals. Start from a recurring pressure in the codebase, then pi
 
 ### Integration Problems
 
-Most integration problems start with Adapter, then sometimes grow into Strategy or Factory when provider selection becomes dynamic.
+Most integration problems start with Adapter, then sometimes grow into
+Strategy or Factory when provider selection becomes dynamic.
 
 ### Workflow Problems
 
-Checkout flows, approval flows, and validation pipelines often start with Command or Chain of Responsibility depending on whether the main concern is ordered processing or action representation.
+Checkout flows, approval flows, and validation pipelines often start
+with Command or Chain of Responsibility depending on whether the main
+concern is ordered processing or action representation.
 
 ### Construction Problems
 
-Use Factory or Builder when object setup begins to obscure intent. If the construction path is still obvious, stay simple.
+Use Factory or Builder when object setup begins to obscure intent. If
+the construction path is still obvious, stay simple.
 
 ## When To Stop
 

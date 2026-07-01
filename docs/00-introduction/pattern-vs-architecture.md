@@ -24,7 +24,8 @@ pattern or simpler refactor is enough.
 
 ## Continue Here
 
-If the main question is no longer "which pattern?" but "which system shape?", continue with:
+If the main question is no longer "which pattern?" but
+"which system shape?", continue with:
 
 - [Layered Architecture](../03-architecture-patterns/layered-architecture.md)
 - [Modular Monolith](../03-architecture-patterns/modular-monolith.md)

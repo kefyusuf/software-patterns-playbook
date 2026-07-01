@@ -1,10 +1,11 @@
 # Choose by Code Smell
 
-Use this guide when the code already feels wrong and you want a concrete refactoring direction.
+Use this guide when the code already feels wrong and you want a
+concrete refactoring direction.
 
 ## Smell to Candidate Mapping
 
-| Code Smell | What It Usually Means | Candidate Pattern | Simpler Alternative First |
+| Code Smell | Meaning | Candidate Pattern | Simpler Alt First |
 |---|---|---|---|
 | Long `if` or `switch` for provider-specific behavior | Variation is growing in one place | [Strategy](../02-gof-patterns/behavioral/strategy.md) | Extract small private methods if there are only two stable branches. |
 | Repeated SDK translation code across services | Vendor details are leaking | [Adapter](../02-gof-patterns/structural/adapter.md) | One shared translator function if the surface area is still tiny. |
@@ -30,12 +31,14 @@ These often need cleanup, not a named pattern.
 
 1. Shrink the smell with local refactors.
 2. Check whether the same pressure appears in more than one place.
-3. Introduce a pattern only if it clearly improves coupling, readability, or change safety.
+3. Introduce a pattern only if it clearly improves coupling,
+   readability, or change safety.
 
 ## Review Questions
 
 - Is the smell recurring or isolated?
-- Will the pattern simplify the next change, not only the current diff?
+- Will the pattern simplify the next change,
+  not only the current diff?
 - Can the team explain the cost of the abstraction?
 
 ## See Also

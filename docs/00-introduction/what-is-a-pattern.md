@@ -1,6 +1,8 @@
 # What Is a Pattern?
 
-A software pattern is a reusable solution shape for a recurring design problem. It is not a law, a framework, or a guarantee of good architecture by itself.
+A software pattern is a reusable solution shape for a recurring design
+problem. It is not a law, a framework, or a guarantee of good
+architecture by itself.
 
 ## What a Pattern Gives You
 
