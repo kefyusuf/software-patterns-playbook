@@ -7,6 +7,7 @@ This index is a navigation layer for the current repository state. It focuses on
 - Start with the decision guides if you know the problem but not the pattern name.
 - Use the core pattern list when you already have a candidate abstraction.
 - Use the scenario list when you want to see multiple patterns working together.
+- Use [Testing With Patterns](./01-decision-guides/testing-with-patterns.md) when you need test-double guidance; it is intentionally documentation-first.
 - Treat items without runnable coverage as documentation-first guidance, not as missing placeholders.
 
 ## Decision Guides
@@ -17,7 +18,7 @@ This index is a navigation layer for the current repository state. It focuses on
 | [Choose by Project Layer](./01-decision-guides/choose-by-project-layer.md) | Decide which patterns make sense in presentation, application, domain, infrastructure, or testing. |
 | [Choose by Code Smell](./01-decision-guides/choose-by-code-smell.md) | Move from concrete code smells to candidate patterns or simpler fixes. |
 | [Pattern vs Pattern](./01-decision-guides/pattern-vs-pattern.md) | Compare similar or commonly confused patterns. |
-| [Testing With Patterns](./01-decision-guides/testing-with-patterns.md) | Decide when to use mocks, fakes, real collaborators, and contract tests around pattern boundaries. |
+| [Testing With Patterns](./01-decision-guides/testing-with-patterns.md) | Decide when to use mocks, fakes, real collaborators, and contract tests around pattern boundaries. This guide is intentionally docs-only. |
 
 ## Core Pattern Guides
 

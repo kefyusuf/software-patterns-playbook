@@ -1,5 +1,7 @@
 # Real World Software Patterns
 
+[![docs-check](https://github.com/kefyusuf/software-patterns-playbook/actions/workflows/docs-check.yml/badge.svg)](https://github.com/kefyusuf/software-patterns-playbook/actions/workflows/docs-check.yml)
+
 Real World Software Patterns is a Markdown-first learning repository for developers who want to choose software patterns based on real problems, project constraints, and trade-offs.
 
 This repository is not a pattern encyclopedia and it is not a framework manual. The goal is to help you answer practical questions such as:
@@ -12,7 +14,7 @@ This repository is not a pattern encyclopedia and it is not a framework manual. 
 ## Quality Signals
 
 - License: [MIT](./LICENSE)
-- CI: [docs-check](./.github/workflows/docs-check.yml) validates Markdown plus runnable Go and TypeScript examples.
+- CI: [docs-check](./.github/workflows/docs-check.yml) runs Markdown linting, `go test ./...` across the Go examples, a TypeScript build with `tsc -p examples/typescript/tsconfig.json`, and the TypeScript example test command.
 - Example policy: runnable code lives under [examples](./examples); compact snippets inside guides are illustrative unless a guide links to a runnable example.
 
 ## Who This Is For
@@ -47,6 +49,7 @@ If you are new to the repository, begin with:
 - [Anti-Patterns](./docs/06-anti-patterns)
 - [Review Checklists](./docs/07-checklists)
 - [Runnable Examples](./examples)
+- [Documentation Tools](./tools/README.md)
 
 ## Repository Principles
 
