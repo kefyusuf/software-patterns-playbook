@@ -1,6 +1,7 @@
 # Real World Software Patterns
 
 [![docs-check](https://github.com/kefyusuf/software-patterns-playbook/actions/workflows/docs-check.yml/badge.svg)](https://github.com/kefyusuf/software-patterns-playbook/actions/workflows/docs-check.yml)
+[![deploy-site](https://github.com/kefyusuf/software-patterns-playbook/actions/workflows/deploy-site.yml/badge.svg)](https://github.com/kefyusuf/software-patterns-playbook/actions/workflows/deploy-site.yml)
 
 Real World Software Patterns is a Markdown-first learning repository for developers who want to choose software patterns based on real problems, project constraints, and trade-offs.
 
@@ -11,11 +12,24 @@ This repository is not a pattern encyclopedia and it is not a framework manual. 
 - What simpler option may be enough for now?
 - Which mistakes usually appear before or after introducing a pattern?
 
+## Read It Online
+
+The playbook is published as a searchable documentation site with full navigation and rendered diagrams:
+
+**<https://kefyusuf.github.io/software-patterns-playbook/>**
+
 ## Quality Signals
 
 - License: [MIT](./LICENSE)
 - CI: [docs-check](./.github/workflows/docs-check.yml) runs Markdown linting, `go test ./...` across the Go examples, a TypeScript build with `tsc -p examples/typescript/tsconfig.json`, and the TypeScript example test command.
+- Site: [deploy-site](./.github/workflows/deploy-site.yml) builds the VitePress site and publishes it to GitHub Pages on every push to `main`. Local preview: `npm install && npm run docs:dev`.
 - Example policy: runnable code lives under [examples](./examples); compact snippets inside guides are illustrative unless a guide links to a runnable example.
+
+## Coverage Snapshot
+
+- All 23 canonical GoF patterns, plus this repository's simple-factory guide ([GoF section](./docs/02-gof-patterns)).
+- Modern architecture guides: Clean Architecture, CQRS, Event Sourcing, Microservices, Domain-Driven Design ([architecture section](./docs/03-architecture-patterns)).
+- Enterprise and resilience guides: Service Layer, Unit of Work, Data Mapper, Value Object, Lazy Load, Retry with Backoff, Circuit Breaker, Outbox, Inbox, Saga ([enterprise section](./docs/04-enterprise-patterns)).
 
 ## Who This Is For
 
@@ -74,10 +88,13 @@ docs/
   05-real-world-scenarios/
   06-anti-patterns/
   07-checklists/
+  .vitepress/          # VitePress site configuration (approved docs site)
 examples/
 diagrams/
 templates/
+tools/
 .github/
+package.json           # site tooling only; content stays Markdown-first
 ```
 
 ## Runnable Coverage
@@ -124,10 +141,11 @@ The TypeScript track currently includes:
 | Background job processing | Docs only | Docs only | scenario guide |
 | Testing patterns and mocks | Docs only | Docs only | decision guide |
 | Architecture guides | Docs only | Docs only | docs only |
+| Resilience guides (Retry, Circuit Breaker, Outbox, Inbox, Saga) | Docs only | Docs only | docs only |
 | Anti-pattern guides | Docs only | Docs only | docs only |
 | Introduction and checklists | Docs only | Docs only | docs only |
 
-Not every guide has a runnable counterpart yet. Architecture guides, anti-patterns, and some conceptual docs remain intentionally documentation-only.
+Not every guide has a runnable counterpart yet. Architecture, resilience, anti-pattern, and some conceptual docs remain intentionally documentation-only.
 
 ## Contribution Rules
 

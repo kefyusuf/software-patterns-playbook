@@ -12,6 +12,8 @@ Changes to one feature require touching many technical layers and directories, m
 
 This architecture works well when teams ship through distinct use cases and want each slice to hold the logic needed for one capability, rather than scattering it across global technical layers.
 
+The failure mode to manage is premature divergence: every slice inventing its own validation, error shape, and persistence access. Healthy slice systems agree on cross-cutting conventions (one command shape, one result type, one transaction scope) while keeping decisions inside slices. Extract shared code only when the *same* pressure appears in a third slice — that is the signal the seam is real rather than speculative.
+
 ## When to Use
 
 - Feature-level ownership matters more than horizontal layer purity.
@@ -59,6 +61,8 @@ Features/
 - [Command](../02-gof-patterns/behavioral/command.md) as a common request shape inside slices.
 - [DTO](../04-enterprise-patterns/dto.md) for slice boundary inputs and outputs.
 - [Domain Event](../04-enterprise-patterns/domain-event.md) when slices need decoupled follow-up reactions.
+- [CQRS](./cqrs.md) as the formal sibling: slices often evolve into per-use-case command handlers and query readers.
+- [Service Layer](../04-enterprise-patterns/service-layer.md) when slice handlers must share one transaction and authorization policy.
 
 ## Review Checklist
 

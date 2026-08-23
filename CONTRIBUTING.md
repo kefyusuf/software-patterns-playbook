@@ -14,6 +14,11 @@ easier to review.
 - Do not add empty placeholder files or empty sections.
 - Do not introduce website tooling, generated tooling,
   or framework-heavy examples unless explicitly requested.
+- Exception: a VitePress documentation site (GitHub Pages) is an
+  explicitly requested and approved direction for this repository
+  (approved by the maintainer, August 2026). Site configuration
+  lives under `docs/.vitepress/` plus the root `package.json` and
+  the `deploy-site.yml` workflow; do not add other site frameworks.
 
 ## Content Types
 
@@ -59,8 +64,13 @@ Use language fences honestly. If a guide uses a short PHP-style snippet to show 
 ## Scope Discipline
 
 Keep the repository lightweight. If your proposed content expands the
-repository into a docs site, package, CLI, or generated system, treat
+repository into a package, CLI, or generated system, treat
 that as a separate direction unless maintainers approve it explicitly.
+
+One expansion is already approved: the VitePress documentation site
+(see the exception under Contribution Rules). Content contributions
+still stay Markdown-first; site configuration changes should be
+minimal and focused on navigation and presentation.
 
 ## When To Add A New Example
 

@@ -8,6 +8,29 @@ know the pattern name yet.
 Patterns are not goals. Start from a recurring pressure in the
 codebase, then pick the smallest abstraction that addresses it.
 
+The selection flow this guide follows:
+
+```mermaid
+flowchart TD
+  problem["Recurring project problem"]
+  smell["Concrete code smell or pressure"]
+  layer["Affected project layer"]
+  simple["Simpler option is enough"]
+  candidate["Candidate pattern"]
+  compare["Compare trade-offs"]
+  guide["Pattern guide or scenario"]
+  avoid["Avoid pattern for now"]
+
+  problem --> smell
+  smell --> layer
+  layer --> simple
+  simple -- "Yes" --> avoid
+  simple -- "No" --> candidate
+  candidate --> compare
+  compare --> guide
+  compare -- "Costs exceed benefit" --> avoid
+```
+
 | Problem | Start Here | Why | Simpler Alternative |
 |---|---|---|---|
 | External providers have different APIs | [Adapter](../02-gof-patterns/structural/adapter.md) | Protects your application from vendor-specific interfaces. | A thin translation function if there is only one integration point. |

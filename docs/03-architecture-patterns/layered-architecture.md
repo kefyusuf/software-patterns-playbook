@@ -12,6 +12,8 @@ UI concerns, workflow orchestration, business rules, and external integrations s
 
 This architecture works best when the system has a clear request-to-business-to-persistence flow and the team needs a stable mental model more than aggressive vertical decomposition.
 
+It degrades in a recognizable way: first layers become pass-throughs that forward calls without decisions, then features scatter across every folder, and finally developers stop asking which layer owns a rule because the answer changes per file. Watch for those signals rather than abandoning layering prematurely — the fix is usually enforcing placement rules, not restructuring.
+
 ## When to Use
 
 - The team needs clear responsibility boundaries across common application concerns.
@@ -57,6 +59,9 @@ Infrastructure/
 - [Facade](../02-gof-patterns/structural/facade.md) for simplifying cross-layer orchestration entry points.
 - [Repository](../04-enterprise-patterns/repository.md) when domain-focused persistence boundaries matter inside the layered model.
 - [DTO](../04-enterprise-patterns/dto.md) for stable boundary shapes between layers.
+- [Clean Architecture](./clean-architecture.md) as the hardened descendant that makes the inward dependency rule strict and testable.
+- [Service Layer](../04-enterprise-patterns/service-layer.md) to give the application band an explicit use-case API instead of pass-through forwarding.
+- [Choose by Project Layer](../01-decision-guides/choose-by-project-layer.md) for the placement rules this architecture depends on.
 
 ## Review Checklist
 

@@ -1,10 +1,10 @@
 # Architecture Patterns
 
-This directory is reserved for larger structural guidance such as layered architecture, hexagonal architecture, modular monolith, and similar system-shaping patterns.
+This directory covers system-shaping guidance: layered architecture, hexagonal architecture, modular monolith, vertical slice, clean architecture, CQRS, event sourcing, microservices, and domain-driven design (aggregates and bounded contexts).
 
 These topics stay intentionally documentation-focused unless a structural guide has enough project pressure and trade-off depth to justify standalone treatment.
 
-Future additions should explain:
+Every architecture guide explains:
 
 - which architectural pressure justifies the structure
 - which simpler structure may still be enough

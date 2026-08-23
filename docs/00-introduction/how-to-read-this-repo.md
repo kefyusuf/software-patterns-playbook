@@ -4,13 +4,13 @@ This repository is meant to be used by problem shape, not by pattern loyalty.
 
 ## Recommended Path
 
-1. Start with the [decision guides](../01-decision-guides)
+1. Start with the [decision guides](../01-decision-guides/choose-by-problem.md)
    if you know the problem but not the pattern name.
-2. Read the [pattern guides](../02-gof-patterns)
+2. Read the [pattern index](../pattern-index.md)
    when you want trade-offs, placement, and misuse warnings.
-3. Read a [scenario guide](../05-real-world-scenarios)
+3. Read a [scenario guide](../05-real-world-scenarios/order-processing.md)
    when you want to see multiple patterns working together.
-4. Read the [anti-pattern guides](../06-anti-patterns)
+4. Read the [anti-pattern guides](../06-anti-patterns/god-service.md)
    when a design feels overbuilt or unclear.
 
 ## Use It During Real Work

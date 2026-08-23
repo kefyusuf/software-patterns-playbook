@@ -3,5 +3,12 @@
     "MD013": false,
     "MD025": false,
     "MD060": false
-  }
+  },
+  "globs": ["**/*.md"],
+  "ignores": [
+    "node_modules/**",
+    "docs/.vitepress/cache/**",
+    "docs/.vitepress/dist/**",
+    "examples/typescript/dist/**"
+  ]
 }

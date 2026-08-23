@@ -10,6 +10,7 @@ related_patterns:
   - Builder
   - Strategy
   - Adapter
+  - Factory Method
 ---
 
 # Factory
@@ -17,6 +18,8 @@ related_patterns:
 ## One-Line Definition
 
 Factory centralizes object creation when the caller should not own the selection or construction details directly.
+
+> This guide covers the *simple factory* shape: one entry point selecting among implementations at call time. When the creation decision must live inside an extendable workflow via an overridable hook, see [Factory Method](./factory-method.md).
 
 ## Problem
 
@@ -104,6 +107,7 @@ final class PaymentGatewayFactory
 - Builder when construction complexity matters more than implementation choice.
 - Strategy when behavior selection matters after creation.
 - Adapter when the real problem is external interface mismatch.
+- [Factory Method](./factory-method.md) when a base workflow must let subclasses decide the concrete type at a defined hook, rather than one central selector deciding up front.
 
 ## Common Mistakes
 

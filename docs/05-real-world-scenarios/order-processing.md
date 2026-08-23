@@ -16,6 +16,27 @@ not_recommended_initially:
 
 An application must process orders after checkout through validation, inventory allocation, fulfillment preparation, status updates, and follow-up side effects without collapsing the whole lifecycle into one large orchestration service.
 
+## How This Scenario Is Analyzed
+
+```mermaid
+flowchart TD
+  scenario["Real-world scenario"]
+  context["Business and technical context"]
+  constraints["Constraints and failure modes"]
+  recommended["Recommended patterns"]
+  not_initially["Not recommended initially"]
+  examples["Runnable or illustrative examples"]
+  testing["Testing strategy"]
+
+  scenario --> context
+  context --> constraints
+  constraints --> recommended
+  constraints --> not_initially
+  recommended --> examples
+  recommended --> testing
+  not_initially --> testing
+```
+
 ## Forces and Constraints
 
 - Business constraint: orders move through several meaningful business stages such as accepted, allocated, packed, or failed.

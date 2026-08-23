@@ -12,6 +12,8 @@ The codebase grows beyond what a plain layered application can manage, but split
 
 This architecture is a strong fit when the business has distinct areas such as billing, checkout, identity, catalog, or notifications, and the team wants clear ownership without distributed-system cost.
 
+The discipline that makes it work is treating modules like services internally: each module owns its tables and exposes an explicit API; no module reaches into another's data "just for one query". Teams that enforce this early gain a genuine option later — extracting a proven module into a service is mechanical. Teams that skip it have a distributed monolith waiting to happen: all of the coupling with none of the deployable simplicity.
+
 ## When to Use
 
 - The system has multiple business capabilities with meaningful boundaries.
@@ -59,6 +61,9 @@ Modules/
 - [Domain Event](../04-enterprise-patterns/domain-event.md) for decoupled cross-module reactions.
 - [Facade](../02-gof-patterns/structural/facade.md) for stable module entry points.
 - [Repository](../04-enterprise-patterns/repository.md) when module persistence rules need explicit boundaries.
+- [Microservices](./microservices.md) as the later extraction step — take it only for modules whose boundaries have proven themselves.
+- [Outbox](../04-enterprise-patterns/outbox.md) when cross-module event reactions must survive crashes without loss.
+- [Distributed Monolith](../06-anti-patterns/distributed-monolith.md) as the failure mode of splitting before these boundaries exist.
 
 ## Review Checklist
 

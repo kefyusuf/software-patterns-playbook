@@ -12,6 +12,8 @@ Core business logic keeps depending directly on frameworks, databases, and vendo
 
 This architecture is strongest when the application must survive framework changes, multiple delivery mechanisms, or heavy integration pressure, and the team is willing to invest in explicit ports and adapters.
 
+The investment pays through testing shape more than folder shape: a use case runs against in-memory adapter fakes with no database or HTTP stack, so the test suite's center becomes fast and stable. The discipline to maintain is port ownership — each port belongs to the core, named in core language ("PaymentAuthorizer"), never in vendor language ("StripeClient"). When ports start mirroring vendor SDKs, the hexagon has inverted and adapters own the core.
+
 ## When to Use
 
 - Business logic needs strong protection from infrastructure churn.
@@ -58,6 +60,9 @@ Adapters/
 - [Adapter](../02-gof-patterns/structural/adapter.md) as a core edge pattern in the architecture.
 - [DTO](../04-enterprise-patterns/dto.md) for stable boundary contracts.
 - [Repository](../04-enterprise-patterns/repository.md) when persistence must be abstracted behind domain-relevant access points.
+- [Clean Architecture](./clean-architecture.md) as the sibling formulation adding explicit use-case and entity rings to the same dependency rule.
+- [Circuit Breaker](../04-enterprise-patterns/circuit-breaker.md) inside adapters, so external failures stop at the hexagon edge instead of entering the core.
+- [Proxy](../02-gof-patterns/structural/proxy.md) when adapter calls need caching or guarding without changing their contracts.
 
 ## Review Checklist
 

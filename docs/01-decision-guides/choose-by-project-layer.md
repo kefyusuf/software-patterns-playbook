@@ -8,6 +8,28 @@ where an abstraction should live.
 Patterns are not layer-neutral. The same abstraction can help
 in one layer and create noise in another.
 
+How the layers relate, and where each one's responsibility stops:
+
+```mermaid
+flowchart LR
+  presentation["Presentation layer"]
+  application["Application layer"]
+  domain["Domain layer"]
+  infrastructure["Infrastructure layer"]
+  testing["Testing boundary"]
+
+  presentation -->|"Formats input and output"| application
+  application -->|"Orchestrates use cases"| domain
+  application -->|"Calls ports or gateways"| infrastructure
+  domain -->|"Owns rules and invariants"| application
+  infrastructure -->|"Adapts external systems"| application
+  testing -->|"Checks contracts and seams"| application
+
+  presentation -. "Keep UI decisions here" .-> presentation
+  domain -. "Avoid framework leakage" .-> domain
+  infrastructure -. "Hide vendor details" .-> infrastructure
+```
+
 | Layer | Typical Pressure | Good Candidates | Usually Too Much Too Early |
 |---|---|---|---|
 | Presentation | Formatting, UI actions, request mapping | [Command](../02-gof-patterns/behavioral/command.md), [Decorator](../02-gof-patterns/structural/decorator.md), [DTO](../04-enterprise-patterns/dto.md) | Deep [Strategy](../02-gof-patterns/behavioral/strategy.md) hierarchies for simple view logic |

@@ -10,6 +10,33 @@ This index is a navigation layer for the current repository state. It focuses on
 - Use [Testing With Patterns](./01-decision-guides/testing-with-patterns.md) when you need test-double guidance; it is intentionally documentation-first.
 - Treat items without runnable coverage as documentation-first guidance, not as missing placeholders.
 
+How the core patterns relate to each other:
+
+```mermaid
+flowchart TD
+  adapter["Adapter"]
+  decorator["Decorator"]
+  factory["Factory"]
+  strategy["Strategy"]
+  state["State"]
+  command["Command"]
+  chain["Chain of Responsibility"]
+  repository["Repository"]
+  dto["DTO"]
+  event["Domain Event"]
+  specification["Specification"]
+
+  factory -->|"chooses implementation"| strategy
+  factory -->|"creates external boundary object"| adapter
+  decorator -->|"wraps behavior around"| adapter
+  chain -->|"runs ordered steps"| command
+  strategy -. "caller chooses policy" .-> state
+  state -. "object stage chooses behavior" .-> strategy
+  repository -->|"returns stable data shape"| dto
+  specification -->|"filters or validates domain rule"| repository
+  event -->|"publishes completed domain fact"| command
+```
+
 ## Decision Guides
 
 | Guide | Focus |
@@ -22,29 +49,76 @@ This index is a navigation layer for the current repository state. It focuses on
 
 ## Core Pattern Guides
 
-| Pattern | Category | Primary Use |
-|---|---|---|
-| [Factory](./02-gof-patterns/creational/factory.md) | Creational | Hide object creation choices behind a stable entry point. |
-| [Builder](./02-gof-patterns/creational/builder.md) | Creational | Construct complex objects step by step without telescoping constructors. |
-| [Singleton](./02-gof-patterns/creational/singleton.md) | Creational | Control a single shared instance, only when process-wide state is genuinely required. |
-| [Adapter](./02-gof-patterns/structural/adapter.md) | Structural | Isolate external or incompatible interfaces from your domain language. |
-| [Decorator](./02-gof-patterns/structural/decorator.md) | Structural | Add behavior around an existing service without subclass explosion. |
-| [Strategy](./02-gof-patterns/behavioral/strategy.md) | Behavioral | Switch behavior by rule, provider, or policy without large conditional blocks. |
-| [Command](./02-gof-patterns/behavioral/command.md) | Behavioral | Represent an action as an object when invocation, queuing, or auditing matters. |
-| [Chain of Responsibility](./02-gof-patterns/behavioral/chain-of-responsibility.md) | Behavioral | Break a workflow into ordered handlers when each step may pass work onward. |
-| [State](./02-gof-patterns/behavioral/state.md) | Behavioral | Model lifecycle-driven behavior when allowed actions depend on the current stage of an object. |
-| [Observer](./02-gof-patterns/behavioral/observer.md) | Behavioral | Let listeners react to a subject's change or announcement without direct receiver coupling. |
-| [Template Method](./02-gof-patterns/behavioral/template-method.md) | Behavioral | Keep an algorithm skeleton fixed while selected steps vary in subclasses. |
+The full canonical GoF catalog is covered below, plus this repository's simple-factory guide.
+
+### Creational
+
+| Pattern | Primary Use |
+|---|---|
+| [Factory](./02-gof-patterns/creational/factory.md) | Hide object creation choices behind a stable entry point. |
+| [Factory Method](./02-gof-patterns/creational/factory-method.md) | Let a base workflow delegate which concrete class to create to an overridable hook. |
+| [Abstract Factory](./02-gof-patterns/creational/abstract-factory.md) | Create matched families of collaborators through one interface so variants stay consistent. |
+| [Builder](./02-gof-patterns/creational/builder.md) | Construct complex objects step by step without telescoping constructors. |
+| [Prototype](./02-gof-patterns/creational/prototype.md) | Create new objects by copying a configured template instead of rebuilding defaults at every call site. |
+| [Singleton](./02-gof-patterns/creational/singleton.md) | Control a single shared instance, only when process-wide state is genuinely required. |
+
+### Structural
+
+| Pattern | Primary Use |
+|---|---|
+| [Adapter](./02-gof-patterns/structural/adapter.md) | Isolate external or incompatible interfaces from your domain language. |
+| [Bridge](./02-gof-patterns/structural/bridge.md) | Split two independent variation axes so their combinations stop multiplying as subclasses. |
+| [Composite](./02-gof-patterns/structural/composite.md) | Treat single items and nested groups uniformly through recursive tree structures. |
+| [Decorator](./02-gof-patterns/structural/decorator.md) | Add behavior around an existing service without subclass explosion. |
+| [Facade](./02-gof-patterns/structural/facade.md) | Simplify a repeated higher-level task over several collaborators. |
+| [Flyweight](./02-gof-patterns/structural/flyweight.md) | Share immutable repeated state across many fine-grained objects to cut memory. |
+| [Proxy](./02-gof-patterns/structural/proxy.md) | Control access to an object behind its own interface through laziness, caching, guarding, or remoting. |
+
+### Behavioral
+
+| Pattern | Primary Use |
+|---|---|
+| [Chain of Responsibility](./02-gof-patterns/behavioral/chain-of-responsibility.md) | Break a workflow into ordered handlers when each step may pass work onward. |
+| [Command](./02-gof-patterns/behavioral/command.md) | Represent an action as an object when invocation, queuing, or auditing matters. |
+| [Interpreter](./02-gof-patterns/behavioral/interpreter.md) | Evaluate sentences of a small domain language expressed as composable expression trees. |
+| [Iterator](./02-gof-patterns/behavioral/iterator.md) | Expose sequential traversal without exposing a collection's internal representation. |
+| [Mediator](./02-gof-patterns/behavioral/mediator.md) | Centralize interaction rules among a bounded group of directly-coupled components. |
+| [Memento](./02-gof-patterns/behavioral/memento.md) | Snapshot and restore object state later without breaking encapsulation. |
+| [State](./02-gof-patterns/behavioral/state.md) | Model lifecycle-driven behavior when allowed actions depend on the current stage of an object. |
+| [Strategy](./02-gof-patterns/behavioral/strategy.md) | Switch behavior by rule, provider, or policy without large conditional blocks. |
+| [Template Method](./02-gof-patterns/behavioral/template-method.md) | Keep an algorithm skeleton fixed while selected steps vary in subclasses. |
+| [Visitor](./02-gof-patterns/behavioral/visitor.md) | Add operations to a stable object structure by visiting each node type from outside. |
 
 ## Extended Pattern Guides
 
 | Pattern | Category | Primary Use |
 |---|---|---|
-| [Facade](./02-gof-patterns/structural/facade.md) | Structural | Simplify a repeated higher-level task over several collaborators. |
 | [Domain Event](./04-enterprise-patterns/domain-event.md) | Enterprise | Capture meaningful business occurrences so follow-up behavior can react with less coupling. |
 | [Repository](./04-enterprise-patterns/repository.md) | Enterprise | Provide a domain-relevant access boundary where retrieval and persistence rules matter. |
 | [DTO](./04-enterprise-patterns/dto.md) | Enterprise | Make boundary data explicit when raw arrays or models create coupling. |
 | [Specification](./04-enterprise-patterns/specification.md) | Enterprise | Name and compose reusable business criteria when rules drift across handlers and queries. |
+| [Service Layer](./04-enterprise-patterns/service-layer.md) | Enterprise | Own use-case boundaries: one method, one transaction, one authorization point per flow. |
+| [Unit of Work](./04-enterprise-patterns/unit-of-work.md) | Enterprise | Commit all changes of one business transaction as a single coordinated write. |
+| [Data Mapper](./04-enterprise-patterns/data-mapper.md) | Enterprise | Translate between objects and rows while domain and schema stay ignorant of each other. |
+| [Value Object](./04-enterprise-patterns/value-object.md) | Enterprise | Make immutable, validated concepts like Money impossible to hold in invalid states. |
+| [Lazy Load](./04-enterprise-patterns/lazy-load.md) | Enterprise | Defer loading related data until first access so common flows skip unneeded queries. |
+| [Retry with Backoff](./04-enterprise-patterns/retry-with-backoff.md) | Resilience | Ride out transient failures with bounded, jittered retries instead of failing or stampeding. |
+| [Circuit Breaker](./04-enterprise-patterns/circuit-breaker.md) | Resilience | Stop calling a failing dependency and fail fast until it recovers. |
+| [Outbox](./04-enterprise-patterns/outbox.md) | Resilience | Publish state-change events reliably by committing them with the data they describe. |
+| [Inbox](./04-enterprise-patterns/inbox.md) | Resilience | Deduplicate at-least-once deliveries before their side effects run twice. |
+| [Saga](./04-enterprise-patterns/saga.md) | Resilience | Coordinate multi-service transactions through local steps plus compensations. |
+
+## Anti-Patterns
+
+| Anti-Pattern | Warning Sign |
+|---|---|
+| [God Service](./06-anti-patterns/god-service.md) | One service accumulating every workflow and unrelated responsibility. |
+| [Anemic Domain Model](./06-anti-patterns/anemic-domain-model.md) | Entities are getter/setter bags while rules live in services — invariants have no home. |
+| [Pattern for Pattern's Sake](./06-anti-patterns/pattern-for-patterns-sake.md) | Abstractions introduced for structure rather than for a recurring problem. |
+| [Repository Everywhere](./06-anti-patterns/repository-everywhere.md) | Repository wrappers over every table regardless of domain relevance. |
+| [Singleton Abuse](./06-anti-patterns/singleton-abuse.md) | Process-wide singletons carrying mutable shared state into every corner. |
+| [Golden Hammer](./06-anti-patterns/golden-hammer.md) | One favored pattern proposed for every problem regardless of shape. |
+| [Distributed Monolith](./06-anti-patterns/distributed-monolith.md) | Many deployed services that still release, fail, and change together. |
 
 ## Runnable Example Coverage
 
@@ -76,7 +150,7 @@ Guides not listed here are currently documentation-only by design.
 |---|---|
 | Runnable in Go and TypeScript | payment system, notification system, e-commerce checkout, state, repository, DTO, domain event, specification |
 | Runnable in Go only | none in the current core example set |
-| Docs only by design | Observer, Template Method, testing guidance, background job processing, architecture guides, anti-patterns, introduction material, checklists, several scenarios without a strong small-example fit yet |
+| Docs only by design | most GoF guides (docs-first teaching snippets), Observer, Template Method, testing guidance, background job processing, architecture guides, anti-patterns, introduction material, checklists, several scenarios without a strong small-example fit yet |
 
 ## Architecture Guides
 
@@ -86,6 +160,11 @@ Guides not listed here are currently documentation-only by design.
 | [Modular Monolith](./03-architecture-patterns/modular-monolith.md) | Keep one deployable application while enforcing stronger business-module boundaries. |
 | [Hexagonal Architecture](./03-architecture-patterns/hexagonal-architecture.md) | Protect core logic from external systems when boundary pressure is high. |
 | [Vertical Slice](./03-architecture-patterns/vertical-slice.md) | Organize by feature or use case when request-to-behavior traceability matters most. |
+| [Clean Architecture](./03-architecture-patterns/clean-architecture.md) | Point all dependencies inward so business rules survive framework and delivery churn. |
+| [CQRS](./03-architecture-patterns/cqrs.md) | Split write-side invariants from read-side shapes when one model serves neither well. |
+| [Event Sourcing](./03-architecture-patterns/event-sourcing.md) | Persist every change as an immutable event when history itself carries business value. |
+| [Microservices](./03-architecture-patterns/microservices.md) | Deploy independently per team only after domain boundaries proved themselves. |
+| [Domain-Driven Design](./03-architecture-patterns/domain-driven-design.md) | Model around bounded contexts and aggregates so each concept has one home and language. |
 
 ## Scenario Guides
 
